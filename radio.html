@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      #s1 {
+        margin-left: 35%;
+        margin-top: 30vh;
+        border: 2px solid rgb(85, 26, 85);
+        height: 250px;
+        width: 300px;
+        background-color: cyan;
+      }
+
+      form {
+        margin-left: 100px;
+      }
+      h2 {
+        text-align: center;
+      }
+      body {
+        background-image: url(img1.jpeg);
+        background-repeat: no-repeat;
+        background-size: 100% 100%;
+        background-attachment: fixed;
+      }
+      #b1 {
+        border: 2px solid black;
+        height: 40px;
+        width: 210px;
+        margin-left: 38%;
+        margin-top: 20px;
+        background-color: white;
+        visibility: hidden;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="s1">
+      <h2>Select your education</h2>
+      <form>
+        <input type="radio" name="input" value="Post graduatee" />PG<br />
+        <input type="radio" name="input" value="Under graduatee" />UG<br />
+        <input type="radio" name="input" value="Higher Secondary" />Higher
+        Secondary<br />
+        <input type="radio" name="input" value="SSLC" />SSLC<br />
+        <input type="radio" name="input" value="illetrate" />Illiterate<br />
+        <br />
+        <button>Submit</button>
+      </form>
+      <br />
+    </div>
+    <div><h4 id="b1"></h4></div>
+    <script>
+      let a = document.querySelector("button");
+      a.addEventListener("click", disp);
+      function disp() {
+        let s = document.querySelector('input[name="input"]:checked');
+        if (s != null) {
+          let q = document.getElementById("b1");
+          q.innerHTML = "Your highest education is" + " " + s.value;
+          q.style.visibility = "visible";
+          event.preventDefault();
+        } else {
+          alert("pls select something");
+        }
+      }
+    </script>
+  </body>
+</html>
